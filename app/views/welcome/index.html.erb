@@ -3,6 +3,12 @@
   <%=select_tag "preset_goals", @preset_goals.map{|g|"<option>#{g}</option>"}.join.html_safe%>
 <%= submit_tag "Go!" %>
 <%end%>
+
+<%=form_tag "sessions/create", :method => :post do %>
+  <label>Email:</label><%=text_field_tag "email"%>
+  <label>Password:</label><%=password_field_tag "password"%>
+<%= submit_tag "Sign In"%>
+<%end%>
 </div>
 
 

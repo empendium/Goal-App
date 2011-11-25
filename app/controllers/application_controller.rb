@@ -12,5 +12,4 @@ class ApplicationController < ActionController::Base
     
     @user = User.find(session[:uid])
   end
-  
 end

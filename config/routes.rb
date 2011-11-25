@@ -7,6 +7,8 @@ GoalsApp::Application.routes.draw do
   resources :goals
   
   get 'welcome/home'
+  post 'sessions/create'
+  get 'sessions/destroy'
 
   
 
