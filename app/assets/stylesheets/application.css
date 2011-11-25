@@ -5,3 +5,47 @@
  *= require_self
  *= require_tree . 
 */
+
+body{
+   	background-image url("/assets/doubleline.png");
+
+}
+
+
+h1, h2{
+	color: #ffc017;
+}
+
+p{
+	color: #ffc017;
+}
+
+label{
+	color: #ffc017;
+}
+	
+	
+/*Gradient?
+/*.gradient-bg 
+
+   /* fallback/image non-cover color
+   background-color: #2aa1ff; 
+
+   /* Safari 4+, Chrome 1-9
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2aa1ff), to(#0b2b44));
+
+   /* Safari 5.1+, Mobile Safari, Chrome 10+
+   background-image: -webkit-linear-gradient(top, #2aa1ff, #0b2b44); 
+
+   /* Firefox 3.6+
+   background-image: -moz-linear-gradient(top, #2aa1ff, #0b2b44);
+
+   /* IE 10+
+   background-image: -ms-linear-gradient(top, #2aa1ff, #0b2b44);
+
+   /* Opera 11.10+
+   background-image: -o-linear-gradient(top, #2aa1ff, #0b2b44);
+
+   background-repeat: no-repeat;
+
+

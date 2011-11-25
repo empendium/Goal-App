@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
+  
+  <%= f.hidden_field :name %>
 
+<p>Write a couple of paragraphs about your goal.  Why is it important to you to complete this goal?  Why this goal and not another goal? What challenges have you faced in completing this goal or other goals?  This information will not be shared with other users.
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
@@ -19,15 +22,22 @@
     <%= f.label :completion_date %><br />
     <%= f.date_select :completion_date %>
   </div>
+  
+  <p>Now, write a brief, one or two sentence comment about how you're feeling as you make a commitment to yourself to accomplish your goal.</p>
+  
   <div class="field">
     <%= f.label :comment %><br />
     <%= f.text_field :comment %>
   </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
+  
+  <div class= "dropdown">
+  <%=f.select "category", @category.map{|g|"<option>#{g}</option>"}.join.html_safe%>
   </div>
+  
+  <p>Now, try to break your goal down into milestones, then steps.  It helps to break down your goal into smaller, more achievable pieces.</p>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

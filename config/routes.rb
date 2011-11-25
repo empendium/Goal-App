@@ -1,8 +1,19 @@
 GoalsApp::Application.routes.draw do
   
-  resources :goals
+  resources :users
 
-  root :to => 'welcome#index'
+  root :to => 'welcome#index' # /
+ 
+  resources :goals
+  
+  get 'welcome/home'
+
+  
+
+
+  
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

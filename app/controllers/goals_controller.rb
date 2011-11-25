@@ -1,4 +1,7 @@
 class GoalsController < ApplicationController
+  
+  skip_before_filter :require_user
+  
   # GET /goals
   # GET /goals.json
   def index
@@ -10,6 +13,7 @@ class GoalsController < ApplicationController
     end
   end
 
+  # GET /goals/:id
   # GET /goals/1
   # GET /goals/1.json
   def show
@@ -24,8 +28,11 @@ class GoalsController < ApplicationController
   # GET /goals/new
   # GET /goals/new.json
   def new
-    @goal = Goal.new
-
+    @goal_new = params[:goal_name_label]
+    @goal = Goal.new(name: @goal_new)
+    @category = Goal.category
+    
+  
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @goal }
@@ -44,7 +51,7 @@ class GoalsController < ApplicationController
 
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
+        format.html { redirect_to welcome_home_path, notice: 'Goal was successfully created.' }
         format.json { render json: @goal, status: :created, location: @goal }
       else
         format.html { render action: "new" }

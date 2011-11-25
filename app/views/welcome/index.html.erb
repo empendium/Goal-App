@@ -1,0 +1,8 @@
+<div class = "dropdown">
+<%=form_tag "users/new", :method => :get do %> 
+  <%=select_tag "preset_goals", @preset_goals.map{|g|"<option>#{g}</option>"}.join.html_safe%>
+<%= submit_tag "Go!" %>
+<%end%>
+</div>
+
+
