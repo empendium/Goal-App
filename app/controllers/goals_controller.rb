@@ -48,7 +48,7 @@ class GoalsController < ApplicationController
   # POST /goals.json
   def create
     @goal = Goal.new(params[:goal])
-    @user = User.find(session[:uid])
+    @user = User.
     @goal.user = @user  #This associates the current user with their new goal. 
                         #After the goal is saved, the User ID is placed in the Goal Table's User ID column. 
     respond_to do |format|

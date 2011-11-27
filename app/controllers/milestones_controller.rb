@@ -42,7 +42,7 @@ class MilestonesController < ApplicationController
   # POST /milestones.json
   def create
     @milestone = Milestone.new(params[:milestone])
-    @goal = Goal.find(session[:uid])
+    @goal = Goal.find_by_user_id
     @milestone.goal = @goal
 
     respond_to do |format|

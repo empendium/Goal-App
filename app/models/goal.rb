@@ -1,7 +1,7 @@
 class Goal < ActiveRecord::Base
   
   belongs_to :user
-  belongs_to :milestone
+  has_many :milestones
   
   def self.preset_goals
     ["quit smoking", "lose weight", "run a marathon", "learn to knit", "build an app", "learn to paint", "learn to draw", "save money", "buy a house", "get a job"]

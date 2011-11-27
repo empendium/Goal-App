@@ -1,3 +1,3 @@
 class Milestone < ActiveRecord::Base
-  has_many :goals
+  belongs_to :goal
 end
