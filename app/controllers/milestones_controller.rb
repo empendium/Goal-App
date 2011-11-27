@@ -26,6 +26,7 @@ class MilestonesController < ApplicationController
   def new
     @milestone = Milestone.new
 
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @milestone }
@@ -41,13 +42,12 @@ class MilestonesController < ApplicationController
   # POST /milestones.json
   def create
     @milestone = Milestone.new(params[:milestone])
-    @user = User.find(session[:uid])
-    @goal = Goal.find(params[:id])
-    @milestone.goal = @milestone
+    @goal = Goal.find(session[:uid])
+    @milestone.goal = @goal
 
     respond_to do |format|
       if @milestone.save
-        format.html { redirect_to @milestone, notice: 'Milestone was successfully created.' }
+        format.html { redirect_to welcome_home_path, notice: 'Milestone was successfully created'}
         format.json { render json: @milestone, status: :created, location: @milestone }
       else
         format.html { render action: "new" }
