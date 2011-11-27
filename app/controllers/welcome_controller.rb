@@ -9,6 +9,7 @@ class WelcomeController < ApplicationController
   def home
     @user = User.find(session[:uid])
     @current_goal = @user.goals.first
+    @milestone_1 = @goals.milestones.first
   end
   
 end
