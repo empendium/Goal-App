@@ -52,7 +52,7 @@ class UsersController < ApplicationController
       if @user.save 
         session[:uid] = @user.id
                                      #this is an "option". Instead of the user providing a value for the params hash, we are providing the value for the params hash.
-        format.html { redirect_to new_goal_path(goal_name_label: params[:goal]), notice: "welcome #{@user.first_name}!" }
+        format.html { redirect_to new_goal_path(goal: params[:goal]), notice: "welcome #{@user.first_name}!" }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }

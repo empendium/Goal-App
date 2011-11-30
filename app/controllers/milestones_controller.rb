@@ -24,8 +24,9 @@ class MilestonesController < ApplicationController
   # GET /milestones/new
   # GET /milestones/new.json
   def new
+    @goal = Goal.find_by_id(params[:goal_id])
     @milestone = Milestone.new
-
+    @milestone.goal = @goal
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,9 +42,7 @@ class MilestonesController < ApplicationController
   # POST /milestones
   # POST /milestones.json
   def create
-    @milestone = Milestone.new(params[:milestone])
-    @goal = Goal.find_by_user_id
-    @milestone.goal = @goal
+    @milestone = Milestone.new(params[:milestone])  
 
     respond_to do |format|
       if @milestone.save

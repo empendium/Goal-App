@@ -28,7 +28,7 @@ class GoalsController < ApplicationController
   # GET /goals/new
   # GET /goals/new.json
   def new
-    @goal_new = params[:goal_name_label]
+    @goal_new = params[:goal]
     @goal = Goal.new(name: @goal_new)
     @category = Goal.category
     
@@ -48,9 +48,9 @@ class GoalsController < ApplicationController
   # POST /goals.json
   def create
     @goal = Goal.new(params[:goal])
-    @user = User.
-    @goal.user = @user  #This associates the current user with their new goal. 
-                        #After the goal is saved, the User ID is placed in the Goal Table's User ID column. 
+    @user = User.find(session[:uid])
+    @goal.user = @user #This associates the current user with their new goal. 
+                       #After the goal is saved, the User ID is placed in the Goal Table's User ID column. 
     respond_to do |format|
       if @goal.save
         format.html { redirect_to welcome_home_path, notice: 'Goal was successfully created.' }

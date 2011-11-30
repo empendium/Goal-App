@@ -1,14 +1,16 @@
 GoalsApp::Application.routes.draw do
   
-  resources :users
-
   root :to => 'welcome#index' # /
- 
-  resources :goals
   
+  resources :milestones
+  resources :users
+  resources :goals
+
+   
   get 'welcome/home'
   post 'sessions/create'
   get 'sessions/destroy'
+  get 'milestones/new'
 
   
 
