@@ -1,6 +1,7 @@
-<h1>Editing goal</h1>
+<h1>Manage Your Goal</h1>
+<h2>"<%= @goal.milestones.count%>"</h2>
 
-<%= render 'form' %>
+<%= render 'goal_components' %>
 
 <%= link_to 'Show', @goal %> |
 <%= link_to 'Back', goals_path %>

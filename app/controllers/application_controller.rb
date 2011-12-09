@@ -9,7 +9,10 @@ class ApplicationController < ActionController::Base
       redirect_to signin_url, :notice => "Please sign in first."
       return
     end
-    
-    @user = User.find(session[:uid])
+    @user = current_user
   end
+
+  # def current_user
+  #     User.find(session[:uid])
+  #   end
 end

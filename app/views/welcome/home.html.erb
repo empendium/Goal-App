@@ -2,13 +2,29 @@
  
 <h2>Current Goal: <%= @current_goal.name %> by <%= @current_goal.completion_date %></h2>
 
-<h3>Your Milestones:</h3><%= link_to 'Create a Milestone', new_milestone_path(:goal_id => @current_goal.id) %>
-<h4>Milestone 1: <%= @milestone_1.description %> </h4>
-<h5>Step 1:</h5>
-<h4>Milestone 2: <%= @milestone_2.description %> </h4>
-<h5>Step 1:</h5>
-<h4>Milestone 3: <%= @milestone_3.description %> </h4>
-<h5>Step 1:</h5>
-<h5>Step 2:</h5>
-<h5>Step 3:</h5>
+<h3>Your Milestones:</h3>
+<% if @milestone_1 and @milestone_2 and @milestone_3 %>
+<%= link_to 'Manage Your Milestones', edit_goal_path(:id => @current_goal.id) %>
+<%end%>
+
+
+<div id = "components">
+<ol>
+<% @current_goal.milestones.each do |milestone| %>
+  <li>
+    Milestone  -  <%=milestone.description%>
+    <ol>
+    <% milestone.steps.each do |step| %>
+      <li><%= step.description%></li>
+    <%end%>
+    </ol>
+  </li>
+<%end%>
+</ol>
+</div>
+
+
+<%
+#embedded ruby with "=" produces some time of string, either html or the string itself, the ones without = are    #for when we do not want to display the value (if statements, loops, etc.).
+%>
 

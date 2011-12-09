@@ -1,0 +1,12 @@
+<%= form_for (@goal) do |f| %>
+ <%= f.fields_for :milestones do |builder| %> 
+  <%= render 'milestones_fields', :f => builder%>
+ <%end%>
+ 
+<p><%= f.submit "Submit"%></p>
+<%end%>
+    
+
+
+  
+    

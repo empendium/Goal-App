@@ -6,4 +6,8 @@ module ApplicationHelper
       return false
     end
   end
+  
+  def current_user
+    User.find(session[:uid])
+  end
 end

@@ -42,6 +42,17 @@ class GoalsController < ApplicationController
   # GET /goals/1/edit
   def edit
     @goal = Goal.find(params[:id])
+    
+    if @goal.milestones.count != 3
+      3.times do
+        milestone = @goal.milestones.build
+        1.times { milestone.steps.build}
+      end
+    end     
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # POST /goals

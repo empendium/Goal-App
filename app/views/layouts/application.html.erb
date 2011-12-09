@@ -2,20 +2,27 @@
 <html>
 <head>
   <title>GoalsApp</title>
-  <link rel="stylesheet" href="/blueprint/screen.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="/blueprint/print.css" type="text/css" media="print">
-  <!--[if lt IE 8]>
-    <link rel="stylesheet" href="/blueprint/ie.css" type="text/css" media="screen, projection">
-  <![endif]-->
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if signed_in? %>
-<%= link_to "Sign Out", sessions_destroy_path%>
-<%end%>
-<%= yield %>
-
+<div id="maincontent">
+     <div id="user_bar">
+       <% if signed_in? %>
+       <%= link_to "#{current_user.first_name}", welcome_home_path%>
+       &nbsp;|&nbsp;
+       <%= link_to "Sign Out", sessions_destroy_path%>
+       <%end%>
+     </div>
+     <header>
+      
+      <%=link_to(image_tag("goalgraphic.png"), root_path)%>
+     </header>
+     <div id="allcontent">
+      <%= yield %>   
+    </div>
+    <footer>&nbsp;</footer>
+  </div>
 </body>
 </html>
