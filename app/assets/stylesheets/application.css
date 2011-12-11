@@ -7,7 +7,8 @@
 */
 
 body{
-	background: #060213;
+	background: #060213 url(/assets/tinystars2.png) right top;
+	background-repeat: no-repeat;
 	font-family: tahoma;	
 }
 
@@ -76,22 +77,17 @@ select{
 
 #maincontent{
 	background-color: white;
-    border-radius: 8px;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	-moz-box-shadow: 3px 3px 3px #404040;
-    -webkit-box-shadow: 3px 3px 3px #404040;
-    -0-box-shadow: 3px 3px 3px #404040;
-    box-shadow: 3px 3px 3px #404040;
 	width: auto;
 	height: auto;
 	margin-top: none;
+	padding-top: none;
 	margin-left: 150px;
 	margin-right: 150px;
 }
 #maincontent footer{
 	background-color: #ff3d2c;
-	height: 130px;
+	height: 300px;
+	margin-bottom: none;
 }
 
 #maincontent input{
@@ -106,6 +102,10 @@ select{
 	background-color: #eae7e3;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
+}
+
+#text.field{
+	text-align: center;
 }
 
 #components{
@@ -139,7 +139,7 @@ select{
 	-webkit-border-radius: 8px;
 }
 
-#steps{
+/*#steps{
 	background-color: #62b2ff;
 	width: auto;
 	height: auto;
@@ -164,6 +164,7 @@ select{
 #steps label.completion{
 	background-color: red;
 }
+*/
 h1 {
 	font-family: Geometry_Soft_Pro-Bold_N, Helvetica Bold, sans-serif bold;
 	font-size: 40px;

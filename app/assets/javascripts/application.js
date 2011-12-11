@@ -8,14 +8,4 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(document).ready(function(){
-	$(".add_step").click(function(event){
-		event.preventDefault();
-		// make an ajax call to the steps controller / new action
-		var id = location.href.match(/\/goals\/(\d+)/)[1];
-		console.log(id);
-		$.post("/goals/" +id+"/edit", function(){
-			
-		})
-	})
-});
+

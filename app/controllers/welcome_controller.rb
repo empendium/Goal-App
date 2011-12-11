@@ -7,6 +7,7 @@ class WelcomeController < ApplicationController
   end
   
   def home
+    @comment = Comment.new
     @user = User.find(session[:uid])
     @current_goal = @user.goals.first
     @milestones = @current_goal.milestones.to_a

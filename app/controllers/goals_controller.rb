@@ -46,7 +46,6 @@ class GoalsController < ApplicationController
     if @goal.milestones.count != 3
       3.times do
         milestone = @goal.milestones.build
-        1.times { milestone.steps.build}
       end
     end     
     respond_to do |format|
@@ -80,7 +79,7 @@ class GoalsController < ApplicationController
 
     respond_to do |format|
       if @goal.update_attributes(params[:goal])
-        format.html { redirect_to @goal, notice: 'Goal was successfully updated.' }
+        format.html { redirect_to welcome_home_path, notice: 'Goal was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

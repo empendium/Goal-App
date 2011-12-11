@@ -6,7 +6,4 @@
    <%= f.date_select :completion_date %>
  </p>
 </div>
- <%= f.fields_for :steps do |builder|%>
-   <%= render 'steps_fields', :f => builder %>
- <%end%>
- <%=link_to "add a step", "#", :class => "add_step"%>
+ 

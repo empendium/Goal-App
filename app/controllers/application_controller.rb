@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     @user = current_user
   end
 
-  # def current_user
-  #     User.find(session[:uid])
-  #   end
+  def current_user
+    User.find(session[:uid])
+  end
 end
