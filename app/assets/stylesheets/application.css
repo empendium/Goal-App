@@ -86,8 +86,10 @@ select{
 }
 #maincontent footer{
 	background-color: #ff3d2c;
-	height: 300px;
+	height: 200px;
 	margin-bottom: none;
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 #maincontent input{
@@ -106,15 +108,7 @@ select{
 
 #text.field{
 	text-align: center;
-}
-
-#components{
-	background-color: #eae7e3;
-	padding: 8px;
-	border-radius: 8px;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-}
+}	s
 
 #center{
 	margin: auto;
@@ -129,14 +123,38 @@ select{
 	-webkit-border-radius: 8px;
 }
 
-#milestones{
-	background-color: #fffbe5;
+#your_milestones{
+	font-size: 25px;
+	line-height: 30px;
 	width: auto;
-	height: 150px;
-	padding: 8px;
+	height: 450px;
+	padding: 15px;
+    margin-bottom: 40px;
+}
+
+#todays_comments li {
+	background-color: #bce8ff;
 	border-radius: 8px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 25px;
+	line-height: 30px;
+	margin: 20px;
+	padding: 15px;
+	width: 500px;
+	
+}
+
+#your_milestones li{
+	background-color: #ffdcb8;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 25px;
+	line-height: 30px;
+	margin: 20px;
+	padding: 15px;
 }
 
 /*#steps{

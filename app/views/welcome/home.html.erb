@@ -2,8 +2,20 @@
  
 <h2>Current Goal: <%= @current_goal.name %> by <%= @current_goal.completion_date %></h2>
 
-<div id = "today's comments">
-  
+<div id = "todays_comments">
+ <ul>
+  <% @comments.each do |comment| %>
+    <li><%=comment.content%></li>
+  <%end%>
+ </ul>
+</div>
+
+<div id = "others_comments">
+  <ul>
+    <% @related_comments.each do |comment| %>
+      <li><%=comment.content%></li>
+    <%end%>
+  </ul>
 </div>
 
 <h3>Your Milestones:</h3>
@@ -11,15 +23,14 @@
 <%= link_to 'Manage Your Milestones', edit_goal_path(:id => @current_goal.id) %>
 <%end%>
 
-
-<div id = "components">
+<div id = "your_milestones">
 <ol>
 <% @current_goal.milestones.each do |milestone| %>
   <li>
     <% unless milestone.completed %>
       <%= form_for(milestone) do |f| %>
       <%= f.hidden_field :completed, :value => true %>
-      <%= f.submit "Milestone Completed!", notice: "Are you sure?" %>
+      <%= f.submit "Milestone Completed!", :notice => "Are you sure?" %>
       <% end %>
     <% end %>
     Milestone  -  <%= milestone.description %>
@@ -36,6 +47,7 @@
 <%end%>
 </ol>
 </div>
+
 
 
 
