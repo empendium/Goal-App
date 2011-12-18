@@ -1,8 +1,11 @@
-<h1>Hi <%= @user.first_name %> !
+<div id = "homeTitle">
+  <h1>Hi <%= @user.first_name %> !</h1>
  
-<h2>Current Goal: <%= @current_goal.name %> by <%= @current_goal.completion_date %></h2>
+  <h2>Current Goal: <%= @current_goal.name %> by <%= @current_goal.completion_date %></h2>
+</div>
 
 <div id = "todays_comments">
+  <p class = "comment_header">This is a list of the comments you've posted as you complete milestones for your goal.</p>
  <ul>
   <% @comments.each do |comment| %>
     <li><%=comment.content%></li>
@@ -11,43 +14,52 @@
 </div>
 
 <div id = "others_comments">
+  <p class = "comment_header">This list contains the insights of of others who are also completing goals in the 
+    "<%= @current_goal.category%>" category.</p>
   <ul>
     <% @related_comments.each do |comment| %>
       <li><%=comment.content%></li>
     <%end%>
   </ul>
 </div>
-
-<h3>Your Milestones:</h3>
-<% if @milestone_1 and @milestone_2 and @milestone_3 %>
-<%= link_to 'Manage Your Milestones', edit_goal_path(:id => @current_goal.id) %>
-<%end%>
-
-<div id = "your_milestones">
-<ol>
-<% @current_goal.milestones.each do |milestone| %>
-  <li>
-    <% unless milestone.completed %>
-      <%= form_for(milestone) do |f| %>
-      <%= f.hidden_field :completed, :value => true %>
-      <%= f.submit "Milestone Completed!", :notice => "Are you sure?" %>
-      <% end %>
-    <% end %>
-    Milestone  -  <%= milestone.description %>
-    <% unless milestone.completed %>
-      <%= form_for(@comment) do |f| %>
-        <% @comment.milestone = milestone %>
-        <%= f.hidden_field :milestone_id %>
-        <%= f.label :Your_Comment %>
-        <%= f.text_field :content %>
-        <%= f.submit :Submit %>
+<div id = "lower_section">
+  <div id = "yourMilestonesTitle">
+    <h3 class = 'yourMilestones'>Your Milestones for "<%=@current_goal.name%>": </h3>
+  </div>
+      <% if @milestone_1 and @milestone_2 and @milestone_3 %>
+      <%= link_to 'Manage Your Milestones', edit_goal_path(:id => @current_goal.id) %>
       <%end%>
-    <%end%>
-  </li>
-<%end%>
-</ol>
-</div>
 
+  <div id = "your_milestones">
+  <ol>
+  <% @current_goal.milestones.each do |milestone| %>
+    <li>
+      <span class = "milestoneDescription"> Milestone  -  <%= milestone.description %> </span>
+      <% if milestone.completed %>
+        <%= image_tag("/assets/completed.png")%>
+      <% else %>
+        <%= form_for(@comment) do |f| %>
+          <% @comment.milestone = milestone %>
+          <%= f.hidden_field :milestone_id %>
+          <%= f.label :Your_Comment %>
+          <%= f.text_field :content %>
+          <%= f.submit :Submit, :class => 'commentSubmit' %>
+        <%end%>
+        <%= form_for(milestone) do |f| %>
+        <%= f.hidden_field :completed, :value => true %>
+        <%= f.submit "Check off this milestone", 
+              :confirm => "Are you sure you've completed this milestone?", :class => 'milestoneButton' %>
+        <% end %>
+      <% end %>
+    </li>
+  <%end%>
+  </ol>
+  <% if @current_goal.milestones.all? { |milestone| milestone.completed } %>
+    <p>Congratulations!</p>
+  <%end%>
+  
+  </div>
+</div>
 
 
 

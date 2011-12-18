@@ -13,25 +13,25 @@
   
    <%=hidden_field_tag :goal, @preset_goal%>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
+<div id = "user_info">
+  <p>
+    <%= f.label :first_name, :class => "field_label" %>
+    <%= f.text_field :first_name, :class => "field" %>
+  </p>
+  <p>
+    <%= f.label :last_name, :class => "field_label" %>
+    <%= f.text_field :last_name, :class => "field" %>
+  </p>
+  <p>
+    <%= f.label :email, :class => "field_label" %>
+    <%= f.text_field :email, :class => "field" %>
+  </p>
+  <p>
+    <%= f.label :password, :class => "field_label" %>
+    <%= f.password_field :password, :class => "field" %>
+  </p>
   <div class="actions">
     <%= f.submit %>
-  <div class = "actions">
-    <%= link_to 'Create a Goal', new_goal_path %>
   </div>
+</div>
 <% end %>

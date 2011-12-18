@@ -5,37 +5,76 @@
  *= require_tree .
  *= require_self 
 */
+@font-face{
+	font-family: "dustismo";
+	src: url(/assets/stylesheets/dustismo.ttf) format("truetype");
+}
+
+@font-face{
+	font-family: "Forque";
+    src: url(/assets/stylesheets/Forque.ttf) format("truetype");	
+}
 
 body{
-	background: #060213 url(/assets/tinystars2.png) right top;
-	background-repeat: no-repeat;
+	background: #060213 url(/assets/glowstars.png) top;
+	background-repeat: repeat-x;
 	font-family: tahoma;	
 }
 
 input[type="submit"]{
 	margin: 10px;
-	padding: 8px 15px;
-	font-family: Tahoma, Arial, sans-serif;
+	font-family: dustismo.ttf, helvetica, Arial, sans-serif;
 	font-weight: bold;
-	font-size: 12px;
-	color: #000000;
-	height: 40px;
+	font-size: 30px;
+	color: #ffffff;
+	line-height: 1;
+	padding: 14px;
+	border: none;
+	background-color: #1b6cb9;
+	-webkit-border-radius: 31px;
+	-moz-border-radius: 31px;
+	-o-border-radius: 31px;
+	border-radius: 31px;
+}
+
+input[type = "submit"].commentSubmit {
+	margin: 10px;
+	font-family: dustismo.ttf, helvetica, arial, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	color: #ffdcb8;
 	line-height: 1;
 	border: none;
-	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);
-	background-image: -webkit-gradient(linear,
-	0% 0%, 0% 100%, from (#c3e506), to (#1e1ec5));
-	background-image: -moz-linear-gradient (0 100%
-		90deg, #c3e506, #1e1ec5);
-	background-color: #62b2ff;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	-o-border-radius: 12px;
-	border-radius: 12px;
-	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	background-color: #1b6cb9;
+	-webkit-border-radius: 31px;
+	-moz-border-radius: 31px;
+	-o-border-radius: 31px;
+	border-radius: 31px;
 }
+
+input[type="submit"].milestoneButton{
+	background-image: url(/assets/completed.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+	color: #000000;
+	height: 60px;
+	width: 400px;
+	line-height: 1;
+	border: none;
+}
+
+#select_a_goal input.Go{
+	font-size: 40px;
+}
+
+
+.drop_down{
+	font-family: dustismo, helvetica, arial, sans-serif;
+	height: 60px;
+	width: 600px;	
+	font-size: 40px;	
+}
+
 
 select{
  width: 175px;
@@ -45,18 +84,50 @@ select{
 	font-size: 15px;
 }
 
-.changeborder:focus 
-{ 
+#sign_in{
+	font-family: dustismo, helvetica, arial, sans-serif;
+	font-size: 25px;
+	border-style: groove;
+	padding-bottom: 60px;
+	text-align: center;
+	width: 900px;
+	height: 200px;
+	padding-top: 70px;
+	margin: auto;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+
+#user_info{
+	text-align: left;
+	margin: 40px;
+	border-style: groove;
+	padding: 40px;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+
+#user_info input.field{
+	width: 400px;
+	font-size: 40px;
+	font-family: dustismo, helvetica, arial, sans-serif;
+}
+
+.field_label{
+	font-family: dustismo, helvetica, arial, sans-serif;
+	width: 400px;
+	font-size: 40px;
+	color: #ffffff;
+	padding: 12px;
+	margin: auto;
+}
+
+.changeborder:focus { 
     outline:Yellow Solid 4px; 
 }
 
-
-@font-face{
-	font-family: 'Geometry_Soft_Pro-Bold_N';
-	font-style: normal;
-	font-weight: normal;
-	src: url('Geometry_Soft_Pro-Bold_N.otf');
-}
 
 #allcontent{	
 	padding: 50px;
@@ -85,15 +156,15 @@ select{
 	margin-right: 150px;
 }
 #maincontent footer{
-	background-color: #ff3d2c;
+	background-image: url(/assets/connect_yellow.png);
 	height: 200px;
 	margin-bottom: none;
-	margin-top: 40px;
+	margin-top: 140px;
 	margin-bottom: 40px;
 }
 
 #maincontent input{
-	font-family: Tahoma, Arial, sans-serif;
+	font-family: dustismo, helvetica, arial, sans-serif;
 	font-size: 20px;
 }
 
@@ -106,22 +177,41 @@ select{
 	-webkit-border-radius: 8px;
 }
 
-#text.field{
-	text-align: center;
-}	s
-
-#center{
-	margin: auto;
-	padding-bottom: 60px;
+#select_a_goal{
 	border-style: groove;
+	padding-bottom: 60px;
 	text-align: center;
-	width: 500px;
-	height: 200px;
+	width: 900px;
+	height: 350px;
 	padding-top: 70px;
+	margin: auto;
 	border-radius: 8px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 }
+
+#select_a_goal p{
+	font-family:  Forque, helvetica, arial, sans-serif;
+	font-size: 80px;
+	color: #b9245b;
+}
+
+#homeTitle {
+	border-style: groove;
+	background-image: url(/assets/connect.png);
+	font-size: 70px;
+	width: 800px;
+	height: 350px;
+	margin: auto;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+
+#homeTitle h1{
+	font-style: dustismo, helvetica, Arial, sans-serif;
+}
+
 
 #your_milestones{
 	font-size: 25px;
@@ -132,8 +222,24 @@ select{
     margin-bottom: 40px;
 }
 
+#yourMilestonesTitle{
+	background-color: #ff1b2a;
+	width: 450px;
+	height: auto;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	text-align: left;
+	padding: 15px;	
+}
+
+#yourMilestonesTitle h3{
+	font-size: 30px;
+}
+
 #todays_comments li {
-	background-color: #bce8ff;
+	list-style-image: url(/assets/quotebubble.png);
+	border-style: groove;
 	border-radius: 8px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
@@ -146,8 +252,42 @@ select{
 	
 }
 
+#todays_comments {
+	float: left;
+	width: 50%;
+}
+
+#others_comments {
+	float: left;
+	width: 50%;
+}
+
+#others_comments li {
+	list-style-image: url(/assets/bubble2.png);
+	border-style: groove;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 25px;
+	line-height: 30px;
+	margin: 20px;
+	padding: 15px;
+	width: 500px;
+}
+
+.comment_header{
+	background-color: #fff4db;
+	font-size: 20px;
+	padding: 15px;
+	margin: 50px;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+
 #your_milestones li{
-	background-color: #ffdcb8;
+	background-color: #fff4db;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 	font-family: Tahoma, Arial, sans-serif;
@@ -157,35 +297,17 @@ select{
 	padding: 15px;
 }
 
-/*#steps{
-	background-color: #62b2ff;
-	width: auto;
-	height: auto;
-	padding: 8px;
-	border-radius: 8px;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-}
-
-#steps label.step{
-	color: white;
-	font-size: 20px;
-	font-weight:bold;
-
-}
-
-#steps input{
-	padding: 10px;
-	font-size: 14px;
-}
-
-#steps label.completion{
-	background-color: red;
-}
-*/
-h1 {
-	font-family: Geometry_Soft_Pro-Bold_N, Helvetica Bold, sans-serif bold;
+.milestoneDescription{
 	font-size: 40px;
+}
+
+#lower_section{
+	clear: both;
+}
+
+h1 {
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 65px;
 	color: #e41b2f;
 	text-align: center;
 	height: 80px;
@@ -193,10 +315,15 @@ h1 {
 }
 
 h2{
-	font-family: Geometry_Soft_Pro-Bold_N, Helvetica Bold, sans-serif bold;
-	font-size: 30px;
-	color: #170f43;
+	font-family: dustismo, Helvetica, Arial, sans-serif;
+	font-size: 55px;
+	color: #ff2929;
 	text-align: center;
+}
+
+h3.yourMilestones{
+	font-family: dustismo, Helvetica, Arial, sans-serif;
+	font-size: 35px;
 }
 
 h4{
@@ -211,7 +338,21 @@ p{
 }
 
 label{
-	color: #060213;
+    background-color: #ff4246;
+    font-family: dustismo, helvetica, Arial, sans-serif;
+    font-size: 30px;
+    padding: 15px;
+    margin: 10px;
+	padding: 8px 15px;
+	font-family: dustismo.ttf, helvetica, Arial, sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	line-height: 1;
+	border: none;
+	-webkit-border-radius: 31px;
+	-moz-border-radius: 31px;
+	-o-border-radius: 31px;
+	border-radius: 31px;
 }
 	
 	
