@@ -9,9 +9,9 @@
 <div id = "sign_in">
 <h3>Already have an account?</h3>
 <%=form_tag "sessions/create", :method => :post do %>
-  <label>Email:</label><%=text_field_tag "email" %>
-  <label>Password:</label><%=password_field_tag "password" %>
-<%= submit_tag "Sign In"%>
+  <label>Email:</label><%=text_field_tag 'request', nil, :class => "field" %><br/>
+  <label>Password:</label><%=password_field_tag 'request', nil, :class => "field" %><br/>
+<%= submit_tag "Sign In", :class => "signin"%>
 <%end%>
 </div>
 

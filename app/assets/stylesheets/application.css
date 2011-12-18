@@ -7,12 +7,12 @@
 */
 @font-face{
 	font-family: "dustismo";
-	src: url(/assets/stylesheets/dustismo.ttf) format("truetype");
+	src: url(/assets/dustismo.ttf) format("truetype");
 }
 
 @font-face{
 	font-family: "Forque";
-    src: url(/assets/stylesheets/Forque.ttf) format("truetype");	
+    src: url(/assets/Forque.ttf) format("truetype");	
 }
 
 body{
@@ -25,7 +25,7 @@ input[type="submit"]{
 	margin: 10px;
 	font-family: dustismo.ttf, helvetica, Arial, sans-serif;
 	font-weight: bold;
-	font-size: 30px;
+	font-size: 40px;
 	color: #ffffff;
 	line-height: 1;
 	padding: 14px;
@@ -41,7 +41,7 @@ input[type = "submit"].commentSubmit {
 	margin: 10px;
 	font-family: dustismo.ttf, helvetica, arial, sans-serif;
 	font-weight: bold;
-	font-size: 30px;
+	font-size: 40px;
 	color: #ffdcb8;
 	line-height: 1;
 	border: none;
@@ -91,12 +91,22 @@ select{
 	padding-bottom: 60px;
 	text-align: center;
 	width: 900px;
-	height: 200px;
+	height: 300px;
 	padding-top: 70px;
 	margin: auto;
 	border-radius: 8px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
+}
+
+#sign_in input.signin{
+	font-size: 40px;
+}
+
+
+#sign_in .field{
+	font-family: dustismo, helvetica, arial, sans-serif;
+	font-size: 45px;
 }
 
 #user_info{
@@ -165,7 +175,7 @@ select{
 
 #maincontent input{
 	font-family: dustismo, helvetica, arial, sans-serif;
-	font-size: 20px;
+	font-size: 33px;
 }
 
 
@@ -191,7 +201,7 @@ select{
 }
 
 #select_a_goal p{
-	font-family:  Forque, helvetica, arial, sans-serif;
+	font-family:  "Forque", helvetica, arial, sans-serif;
 	font-size: 80px;
 	color: #b9245b;
 }
