@@ -4,6 +4,7 @@ class CreateMilestones < ActiveRecord::Migration
       t.integer :goal_id
       t.date :completion_date
       t.string :description
+      t.boolean :completed
 
       t.timestamps
     end

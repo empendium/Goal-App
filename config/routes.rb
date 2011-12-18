@@ -5,13 +5,14 @@ GoalsApp::Application.routes.draw do
   resources :milestones
   resources :users
   resources :goals
+  resources :comments
 
    
   get 'welcome/home'
   post 'sessions/create'
   get 'sessions/destroy'
   get 'milestones/new'
-
+  post 'comments/new'  
   
 
 

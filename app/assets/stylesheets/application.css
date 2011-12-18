@@ -180,9 +180,9 @@ select{
 
 
 #text{
+	border-style: groove;
 	margin: 15px;
 	padding: 25px;
-	background-color: #eae7e3;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 }

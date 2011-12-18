@@ -7,6 +7,7 @@ class CreateGoals < ActiveRecord::Migration
       t.string :comment
       t.string :category
       t.integer :user_id
+      t.boolean :completed
 
       t.timestamps
     end

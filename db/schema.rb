@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111127032349) do
+ActiveRecord::Schema.define(:version => 20111204205219) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "milestone_id"
+    t.integer  "user_id"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "goals", :force => true do |t|
     t.string   "name"
@@ -20,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20111127032349) do
     t.string   "comment"
     t.string   "category"
     t.integer  "user_id"
+    t.boolean  "completed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20111127032349) do
     t.integer  "goal_id"
     t.date     "completion_date"
     t.string   "description"
+    t.boolean  "completed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
