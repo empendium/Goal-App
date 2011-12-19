@@ -26,9 +26,11 @@
   <div id = "yourMilestonesTitle">
     <h3 class = 'yourMilestones'>Your Milestones for "<%=@current_goal.name%>": </h3>
   </div>
+  <div id = "manageYourMilestones">
       <% if @milestone_1 and @milestone_2 and @milestone_3 %>
-      <%= link_to 'Manage Your Milestones', edit_goal_path(:id => @current_goal.id) %>
+      <p><%= link_to 'Manage Your Milestones', edit_goal_path(:id => @current_goal.id) %></p>
       <%end%>
+  </div>
 
   <div id = "your_milestones">
   <ol>
@@ -54,8 +56,10 @@
     </li>
   <%end%>
   </ol>
-  <% if @current_goal.milestones.all? { |milestone| milestone.completed } %>
+  <% if !@current_goal.milestones.empty? and @current_goal.milestones.all? { |milestone| milestone.completed } %>
+  <div id = "Congratulations">
     <p>Congratulations!</p>
+  </div>
   <%end%>
   
   </div>

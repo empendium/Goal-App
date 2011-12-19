@@ -1,9 +1,12 @@
-<h1>Manage Your Goal</h1>
-<h2>"<%= @goal.milestones.count%>"</h2>
+<div id = "breakDownGoal">
+<h1>Manage Your Milestones</h1>
+<h2>"<%= @goal.description%>"</h2>
+<p id = "helps">It helps to break your goal down into smaller, more achievable pieces. Break your goal down into three milestones that can be completed consecutively.</p>
 
 <%= render 'goal_components' %>
 
 <%= link_to 'Show', @goal %> |
 <%= link_to 'Back', goals_path %>
+</div>
 
 

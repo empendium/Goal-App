@@ -1,9 +1,8 @@
-<div id="milestones">
-<p>
-   <%= f.label :description, "Milestone"%><br />
-   <%= f.text_area :description, :rows => 2 %><br />
-   <%= f.label :completion_date,"Complete by" %><br />
-   <%= f.date_select :completion_date %>
- </p>
+<div class = "milestone_container">
+   <p><%= f.label :description, "Milestone" %></p>
+   <p><%= f.text_area :description, :rows => 2, :class => "text_area" %></p>
+   <p><%= f.label :completion_date,"Complete by" %></p>
+   <p><%= f.date_select :completion_date, {}, :class => "drop_down" %></p>
 </div>
+
  
